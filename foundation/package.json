@@ -1,0 +1,19 @@
+{
+  "name": "foundation",
+  "version": "1.0.0",
+  "description": "Parse AWStats data files and create more web-friendly json data files",
+  "main": "foundation.js",
+  "scripts": {
+    "test": "foundation"
+  },
+  "author": "Andy Arndt",
+  "license": "MIT",
+  "bin": {
+    "foundation": "foundation.js"
+  },
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "optimist": "^0.6.1",
+    "winston": "^3.1.0"
+  }
+}
