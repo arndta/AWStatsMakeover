@@ -1,6 +1,40 @@
 {
+    "generateThumbnails": true,
+    "generateSiteListing": true,
+    "siteListingOutputPath": "./../../output/index",
     "sites": 
     [
-        {"awstatsConfig": "", "outputPath": ""}
+        {
+            "awstatsConfig": "./../../configs/awstats.andyarndt.net.conf", 
+            "outputPath": "./../../output/andyarndt.net"
+        },
+        {
+            "awstatsConfig": "./../../configs/awstats.app.theeasyaccountingsolution.com.conf", 
+            "outputPath": "./../../output/app.theeasyaccountingsolution.com"
+        },
+        {
+            "awstatsConfig": "./../../configs/awstats.faithandandy.com.conf", 
+            "outputPath": "./../../output/faithandandy.com"
+        },
+        {
+            "awstatsConfig": "./../../configs/awstats.melanieandmickey.com.conf", 
+            "outputPath": "./../../output/melanieandmickey.com"
+        },
+        {
+            "awstatsConfig": "./../../configs/awstats.moderatelyimpressivesolutions.com.conf", 
+            "outputPath": "./../../output/moderatelyimpressivesolutions.com"
+        },
+        {
+            "awstatsConfig": "./../../configs/awstats.phillips66gymnastics.com.conf", 
+            "outputPath": "./../../output/phillips66gymnastics.com"
+        },
+        {
+            "awstatsConfig": "./../../configs/awstats.plotsmith.com.conf", 
+            "outputPath": "./../../output/plotsmith.com"
+        },
+        {
+            "awstatsConfig": "./../../configs/awstats.theeasyaccountingsolution.com.conf", 
+            "outputPath": "./../../output/theeasyaccountingsolution.com"
+        }
     ] 
 }
