@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,12 @@ import { HomeComponent } from './routes/home/home.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { NavbarModule } from 'angular-bootstrap-md';
+import { ConfigService } from './data/config/config.service';
+import { FileListService } from './data/filelist/filelist.service';
+
+export function initializeApp(appConfig: ConfigService) {
+  return () => appConfig.load();
+}
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { NavbarModule } from 'angular-bootstrap-md';
     AppRoutingModule,
     NavbarModule
   ],
-  providers: [],
+  providers: [
+    FileListService,
+    ConfigService,
+    { provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [ConfigService], multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
