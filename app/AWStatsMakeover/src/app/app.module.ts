@@ -9,6 +9,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { NavbarModule } from 'angular-bootstrap-md';
 import { ConfigService } from './data/config/config.service';
 import { FileListService } from './data/filelist/filelist.service';
+import { HttpModule } from '@angular/http';
+import { DatesService } from './shared/dates.service';
 
 export function initializeApp(appConfig: ConfigService) {
   return () => appConfig.load();
@@ -26,11 +28,13 @@ export function initializeApp(appConfig: ConfigService) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NavbarModule
+    NavbarModule,
+    HttpModule
   ],
   providers: [
     FileListService,
     ConfigService,
+    DatesService,
     { provide: APP_INITIALIZER,
       useFactory: initializeApp,
       deps: [ConfigService], multi: true }

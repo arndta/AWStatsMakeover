@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from 'src/app/data/config/config.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  
+  title : string;
+
+  constructor() {
+    this.title = ConfigService.config.siteTitle;
+    console.log(this.title);
+  }
 }
